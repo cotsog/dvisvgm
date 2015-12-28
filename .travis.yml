@@ -5,16 +5,9 @@ compiler:
    - clang
 
 before_install:
-   - sudo apt-get update -qq
-   - sudo apt-get install -qq libgtest-dev # autotools-dev libkpathsea-dev libpotrace-dev libfreetype6-dev libgs-dev libz-dev texlive-base python-lxml 
-   - echo $PATH && sudo echo $PATH
-   - echo $CXX && sudo echo $CXX
-   - echo $CC && sudo echo $CC
-   - which clang++ && which cmake
-   - clang++ -v && cmake --version
-   - cmake --help
-   # Ubuntu doesn't provide pre-built gtest libraries, so we have to build them here.
-   - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
+  - sudo apt-get update
+  - sudo apt-get install -y libgtest-dev
+  - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
 
 env:
    global:
