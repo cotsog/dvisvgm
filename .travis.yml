@@ -10,8 +10,8 @@ before_install:
    - sudo apt-get install -qq autotools-dev libkpathsea-dev libpotrace-dev libfreetype6-dev libgs-dev libz-dev texlive-base python-lxml libgtest-dev
    - echo $PATH
    - echo $CXX
-   - which clang++
-   - clang++ -v
+   - which clang++ && which cmake
+   - clang++ -v && cmake -v
    # Ubuntu doesn't provide pre-built gtest libraries, so we have to build them here.
    - "cd /usr/src/gtest/ && sudo cmake . && sudo cmake --build . && sudo mv libgtest* /usr/local/lib/ ; cd -"
 
