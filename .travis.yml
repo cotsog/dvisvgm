@@ -14,11 +14,7 @@ before_install:
    - clang++ -v && cmake --version
    - cmake --help
    # Ubuntu doesn't provide pre-built gtest libraries, so we have to build them here.
-   - cd /usr/src/gtest/
-   - sudo cmake -D CMAKE_CXX_COMPILER=clang++ .
-   - sudo cmake -D CMAKE_CXX_COMPILER=clang++ --build .
-   - sudo mv libgtest* /usr/local/lib/
-   - cd -
+   - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
 
 env:
    global:
