@@ -1,5 +1,9 @@
-language: cpp
+sudo: required
+dist: precise
 group: legacy
+
+language: cpp
+
 compiler: clang
 
 before_install:
