@@ -13,6 +13,7 @@ before_install:
    - echo $CXX
    - which clang++ && which cmake
    - clang++ -v && cmake --version
+   - cmake --help
    # Ubuntu doesn't provide pre-built gtest libraries, so we have to build them here.
    - cd /usr/src/gtest/
    - sudo cmake .
