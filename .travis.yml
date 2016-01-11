@@ -1,6 +1,4 @@
 sudo: required
-dist: precise
-group: legacy
 
 language: cpp
 
@@ -9,6 +7,10 @@ compiler: clang
 before_install:
  - sudo apt-get update
  - sudo apt-get install -y libgtest-dev
- - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
+ - cd /usr/src/gtest 
+ - sudo CXX=clang++ CC=clang cmake .
+ - sudo CXX=clang++ CC=clang cmake --build .
+ - sudo mv libg* /usr/local/lib/
+ - cd -
 
 script: true
